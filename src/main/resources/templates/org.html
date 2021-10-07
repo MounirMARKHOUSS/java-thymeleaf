@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head> <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+<title>org</title>
+</head>
+<body>
+<div align="center">
+<div>
+<form th:action="@{/savvvvv}" methode="post" th:object="${organigrame}">
+				<table cellpadding="10">
+					<table class="table" border="1" cellpadding="10">
+					
+                           <tr>
+							<td>Nom_organigrame</td>
+							<td><input type="text" th:field="*{nom_organigrame}" /></td>
+						</tr>
+	
+                           <tr>
+							<td>Adresse</td>
+							<td><input type="text" th:field="*{adresse}" /></td>
+						</tr>
+								
+                           <tr>
+							<td>Email</td>
+							<td><input type="text" th:field="*{email}" /></td>
+						</tr>
+								
+                           <tr>
+							<td>Tel</td>
+							<td><input type="text" th:field="*{tel}" /></td>
+						</tr>
+							<td><button class="btn btn-primary" type="submit">Save</button></td>														
+						
+</body>
+</html>

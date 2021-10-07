@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Section</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div align="center">
+		<div>
+			<h1>Update Section</h1>
+			<form th:action="@{/savee}" methode="post" th:object="${section}">
+				<table class="table" border="1" cellpadding="10">
+				<tr>
+  					<td>Nom_section</td>
+						<td><input type="text" th:field="*{nom_section}" /></td>
+					</tr>
+					<tr>
+
+						<td>Duree_pfe</td>
+						<td><input type="text" th:field="*{duree_pfe}" /></td>
+					</tr>
+					<tr>
+
+						<td>Duree_soutnance</td>
+						<td><input type="text" th:field="*{duree_soutnance}" /></td>
+					</tr>
+					<td><button class="btn btn-primary" type="submit">Save</button></td>
+					
+		        	</table>
+	</form>
+
+</div>			
+					
+					
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>edite Spetialite</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div align="center">
+<div>
+			<form th:action="@{/autosauv}" methode="post" th:object="${spetialite}">
+			<table class="table" border="1" cellpadding="10">
+
+      	
+	                 	<tr>
+							<td>Nom_Spetialite</td>
+							<td><input type="text" th:field="*{nom_spetialite}" /></td>
+						</tr>			
+					<td><button class="btn btn-primary" type="submit">Save</button></td>
+					</table>
+					</form>
+					</div>
+</body>
+</html>

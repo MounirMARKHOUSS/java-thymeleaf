@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+<title>Enseignant</title>
+</head>
+<body>
+<div align="center">
+<h1> Enseignant  List</h1>
+ <a href="/ense"> New  Enseignant </a>
+ </br></br>
+
+ <table border="1" cellpadding="10">
+<thead>
+<tr>
+<th>ID</th>
+ <th>Matricule_grade</th>
+<th>NOM</th>
+<th>PRENOM</th>
+<th>DATE_NAISSANCE</th>
+<th>CIN</th>
+<th>EMAIL</th>
+<th>ADRESSE</th>
+<th>TEL</th>
+<th>PASSWORD</th>
+<th>section</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each=" enseignant:${ enseignants}">
+
+<td th:text="${ enseignant.id}"> Id </td>
+<td th:text="${enseignant .matricule_grade}">Matricule_grade</td>
+<td th:text="${ enseignant.nom}">NOM</td>
+<td th:text="${ enseignant.prenom}">PRENOM</td>
+<td th:text="${ enseignant.date_naissance}">DATE_NAISSANCE</td>
+<td th:text="${ enseignant.cin}">CIN</td>
+<td th:text="${ enseignant.email}">EMAIL</td>
+<td th:text="${ enseignant.adresse}">ADRESSE</td>
+<td th:text="${ enseignant.tel}">TEL</td>
+<td th:text="${ enseignant.password}">PASSWORD</td>
+ 
+
+<td>
+<a th:href="@{'/edit/'+${enseignant .id}}" class="btn btn-primary" type="submit">edit</a>
+<a th:href="@{'/delete/'+${enseignant .id}}" class="btn btn-primary" type="submit">delete</a>
+</td>
+ 
+</tr>
+ 
+</tbody>
+</table>
+
+ 
+
+
+  
+</div>
+
+
+</body>
+</html>

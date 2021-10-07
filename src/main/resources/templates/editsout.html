@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Soutnance</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div align="center">
+		<div>
+			<h1>Update Section</h1>
+			<form th:action="@{/savee}" methode="post"
+				th:object="${semmaine_soutenance}">
+				<table class="table" border="1" cellpadding="10">
+
+					<tr>
+						<td>Date_Debut</td>
+						<td><input type="text" th:field="*{date_debut}" /></td>
+					</tr>
+					<tr>
+
+						<td>Date_Fin</td>
+						<td><input type="text" th:field="*{date_fin}" /></td>
+					</tr>
+					<tr>
+
+						<td>Date_Debut_Depot</td>
+						<td><input type="text" th:field="*{date_debut_depot}" /></td>
+					</tr>
+					<td>Date_Fin_Depot</td>
+					<td><input type="text" th:field="*{date_fin_depot}" /></td>
+					</tr>
+					<td><button class="btn btn-primary" type="submit">Save</button></td>
+
+				</table>
+			</form>
+
+		</div>
+</body>
+</html>

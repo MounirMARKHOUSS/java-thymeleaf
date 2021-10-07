@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head> <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>ense</title>
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+</head>
+<body>
+	<div align="center">
+		<div>
+			<form th:action="@{/save}" methode="post" th:object="${enseignant}">
+				<table cellpadding="10">
+					<table class="table" border="1" cellpadding="10">
+
+                   <tr>
+							<td>Matricule_code</td>
+							<td><input type="text" th:field="*{matricule_grade}" /></td>
+						</tr>
+
+
+
+						<tr>
+							<td>NOM</td>
+							<td><input type="text" th:field="*{nom}" /></td>
+						</tr>
+
+						<tr>
+
+							<td>PRENOM</td>
+							<td><input type="text" th:field="*{prenom}" /></td>
+						</tr>
+
+						<tr>
+
+							<td>DATE_NAISSANCE</td>
+							<td><input type="text" th:field="*{date_naissance}" /></td>
+						</tr>
+
+						<tr>
+
+							<td>CIN</td>
+							<td><input type="text" th:field="*{cin}" /></td>
+						</tr>
+						<tr>
+
+							<td>EMAIL</td>
+							<td><input type="text" th:field="*{email}" /></td>
+						</tr>
+
+						<tr>
+
+							<td>ADRESSE</td>
+							<td><input type="text" th:field="*{adresse}" /></td>
+						</tr>
+						<tr>
+
+							<td>TEL</td>
+							<td><input type="text" th:field="*{tel}" /></td>
+						</tr>
+						<tr>
+
+							<td>PASSWORD</td>
+							<td><input type="text" th:field="*{password}" /></td>
+						</tr>
+						<td><button class="btn btn-primary" type="submit">Save</button></td>
+					</table>
+					</form>
+					</div>
+</body>
+</html>

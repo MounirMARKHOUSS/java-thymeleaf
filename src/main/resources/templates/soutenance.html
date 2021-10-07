@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+ <meta charset="ISO-8859-1">
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+<title>soutenance</title>
+</head>
+<body>
+<div align="center">
+<h1>List of Soutenance </h1>
+<a href="/sout">New Soutenance</a>
+ </br></br>
+<table border="1" cellpadding="10">
+<thead>
+<tr>
+<th>codeSemmaine_Soutenance</th>
+<th>date_debut</th>
+<th>date_fin</th>
+<th>date_debut_depot</th>
+<th>date_fin_depot</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="semmaine_soutenance:${semmaine_soutenances}">
+
+<td th:text="${semmaine_soutenance.code_semmaine_soutenance}"> codeSemmaine_Soutenance </td>
+<td th:text="${semmaine_soutenance.date_debut}">date_debut</td>
+<td th:text="${semmaine_soutenance.date_fin}">date_fin</td>
+<td th:text="${semmaine_soutenance.date_debut_depot}">date_debut_depot</td>
+<td th:text="${semmaine_soutenance.date_fin_depot}">date_fin_depot</td>
+<td>
+<a th:href="@{'/edit/'+${semmaine_soutenance.code_semmaine_soutenance}}" class="btn btn-primary" type="submit">edit</a>
+<a th:href="@{'/delete/'+${semmaine_soutenance.code_semmaine_soutenance}}" class="btn btn-primary" type="submit">delete</a>
+</td>
+<td th:text="${semmaine_soutenance.section != null ? semmaine_soutenance.section.nom_section : 'NOT FOUND'}"/>Section</td>
+ 
+
+
+</tr>
+
+
+</tbody>
+</table>
+</div>
+</body>
+</html>

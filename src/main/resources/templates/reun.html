@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css"
+	href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>reun</title>
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+</head>
+<body>
+	<div align="center">
+		<div>
+			<form th:action="@{/enregist}" methode="post"
+				th:object="${reunion_travail}">
+				<table cellpadding="10">
+					<table class="table" border="1" cellpadding="10">
+
+						<tr>
+							<td>Date_reunion</td>
+							<td><input type="text" th:field="*{date_reunion}" /></td>
+						</tr>
+
+						<tr>
+							<td>Travail_effetuer</td>
+							<td><input type="text" th:field="*{travail_effetuer}" /></td>
+						</tr>
+
+						<tr>
+							<td>Objectif</td>
+							<td><input type="text" th:field="*{objectif}" /></td>
+						</tr>
+						<td><button class="btn btn-primary" type="submit">Save</button></td>
+					</table>
+					</form>
+					</div>
+</body>
+</html>

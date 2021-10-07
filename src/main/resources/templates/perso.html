@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head> <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+</head>
+<body>
+	<div align="center">
+		<div>
+			<form th:action="@{/av}" methode="post" th:object="${personnel}">
+				<table cellpadding="10">
+					<table class="table" border="1" cellpadding="10">
+						 
+		      <tr>
+							<td>nom</td>
+							<td><input type="text" th:field="*{nom}" /></td>
+						</tr>
+		      <tr>
+							<td>prenom</td>
+							<td><input type="text" th:field="*{prenom}" /></td>
+						</tr>
+						
+		      <tr>
+							<td>adresse</td>
+							<td><input type="text" th:field="*{adresse}" /></td>
+						</tr>
+						
+		      <tr>
+							<td>poste</td>
+							<td><input type="text" th:field="*{poste}" /></td>
+						</tr>
+						
+						
+		      <tr>
+							<td>mail</td>
+							<td><input type="text" th:field="*{mail}" /></td>
+						</tr>
+		      <tr>
+							<td>telephone</td>
+							<td><input type="text" th:field="*{telephone}" /></td>
+							</tr>
+							
+							 <tr>
+                <td>Section:</td>
+                <td>
+                    <select th:field="*{organigrame}">
+                         <option value="-1" name="organigrameId"> -- Select Organigrame -- </option>
+                         <option th:each="organigrame : ${organigrames}"
+                            th:value="${organigrame.id_Organigrame}"
+                            th:utext="${organigrame.nom_organigrame}"/>
+                  </select>
+                </td>
+            </tr>
+						 
+					<td><button class="btn btn-primary" type="submit">Save</button></td>
+					</table>
+					</form>
+					</div>			
+						
+</body>
+</html>

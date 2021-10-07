@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css"
+	href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/org">Organigramme</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/etud">Etudiant <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/perso">Personel</a>   
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sect">Section</a>   
+      </li>
+       </a>
+        </li>
+         <li class="nav-item">
+        <a class="nav-link" href="/sout">soutenance Date</a>   
+      </li>
+       </a>
+        <li class="nav-item">
+        <a class="nav-link" href="/speti">Spetialite</a>   
+      </li>
+       </a>
+        <li class="nav-item">
+        <a class="nav-link" href="/reun">Reunion_Travail</a>   
+      </li>
+       </a>
+        </li>
+         </ul>
+     <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+	
+	
+	
+	
+<title>Pfe</title>
+</head>
+<body>
+	<div align="center">
+		<h1>pfe List</h1>
+		<a href="/z"> New Pfe </a> </br>
+		</br>
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+			    	<th>ID_PFE</th>
+					<th>date_soutenance</th>
+					<th>heure_soutenance</th>
+					<th>salle</th>
+					<th>note</th>
+					<th>mention</th>
+					<th>etat</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="pfe:${pfes}">
+
+
+                    <td th:text="${pfe.id_pfe}"></td>
+					<td th:text="${pfe.date_soutenance}"></td>
+					<td th:text="${pfe.heure_soutenance}"></td>
+					<td th:text="${pfe.salle}"></td>
+					<td th:text="${pfe.note}"></td>
+					<td th:text="${pfe.mention}"></td>
+					<td th:text="${pfe.etat}"></td>
+
+					<td><a th:href="@{'/moddi/'+${pfe.id_pfe}}" class="btn btn-primary"
+						type="submit">edit</a> <a th:href="@{'/sppr/'+${pfe.id_pfe}}"
+						class="btn btn-primary" type="submit">delete</a></td>
+
+
+
+				</tr>
+
+
+			</tbody>
+		</table>
+
+
+
+
+
+	</div>
+
+
+
+</body>
+</html>

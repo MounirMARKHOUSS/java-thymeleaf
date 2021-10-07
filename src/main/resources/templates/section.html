@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>section</title>
+</head>
+<body>
+<div align="center">
+<h1>Section List</h1>
+ <a href="/sect"> New Section </a>
+  </br></br>
+
+ <table border="1" cellpadding="10">
+  
+  <thead>
+<tr>
+<th>id_section</th>
+ <th>nom_section</th>
+<th>duree_pfe</th>
+<th>duree_soutnance</th>
+ 
+</tr>
+</thead>
+<tbody>
+<tr th:each="section:${sections}">
+
+<td th:text="${section.id_section}"> Id_section </td>
+<td th:text="${section.nom_section}">Nom_section</td>
+<td th:text="${section.duree_pfe}">Duree_pfe</td>
+<td th:text="${section.duree_soutnance}">Duree_soutnance</td>
+ 
+<td>
+<a th:href="@{'/edite/'+${section.id_section}}">edit</a>
+<a th:href="@{'/deletee/'+${section.id_section}}">delete</a>
+
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+ 
+ 
+</body>
+</html>

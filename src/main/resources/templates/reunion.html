@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head> <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+<title>Reunion</title>
+</head>
+<body>
+<div align="center">
+<h1> List  of organigrame </h1>
+<a href="/reun">New organigrame</a>
+ </br></br>
+<table border="1" cellpadding="10">
+<thead>
+<tr>
+<th>id  </th>
+<th>date_reunion</th>
+<th>travail_effetuer </th>
+<th>objectif</th>
+ 
+</tr>
+</thead>
+<tbody>
+
+<tr th:each="reunion_travail:${reunion_travails}">
+<td th:text="${reunion_travail.id }">id</td>
+<td th:text="${reunion_travail.date_reunion}">date_reunion</td>
+<td th:text="${reunion_travail.travail_effetuer}">travail_effetuer</td>
+<td th:text="${reunion_travail.objectif}">objectif</td>
+ 
+<td>
+<a th:href="@{'/modification/'+${reunion_travail.id }}" class="btn btn-primary" type="submit">edit</a>
+<a th:href="@{'/supresssion/'+${reunion_travail.id }}" class="btn btn-primary" type="submit">delete</a>
+
+</td>
+
+
+</tr>
+</tbody>
+
+</body>
+</html>

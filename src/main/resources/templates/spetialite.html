@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>   <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+<title>Spetialite</title>
+</head>
+<body>
+<div align="center">
+<h1>List of Spetialite </h1>
+<a href="/speti">New Spetialite </a>
+ </br></br>
+<table border="1" cellpadding="10">
+<thead>
+<tr>
+
+<th>id_spetialite</th>
+<th>nom_spetialite</th>
+ </tr>
+ </thead>
+<tbody>
+<tr th:each="spetialite:${spetialites}">
+<td th:text="${spetialite.id_spetialite}"> id_spetialite </td>
+<td th:text="${spetialite.nom_spetialite}"> nom_spetialite </td>
+<td>
+<a th:href="@{'/pas/'+${spetialite.id_spetialite}}" class="btn btn-primary" type="submit">edit</a>
+<a th:href="@{'/asp/'+${spetialite.id_spetialite}}" class="btn btn-primary" type="submit">delete</a>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+
+ 
+</body>
+</html>

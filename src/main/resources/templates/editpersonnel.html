@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Personnel</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div align="center">
+		<div>
+			<h1>Update Personnel</h1>
+
+			<form th:action="@{/av}" methode="post" th:object="${personnel}">
+				<table cellpadding="10">
+
+					<table class="table" border="1" cellpadding="10">
+
+						<tr>
+							<td>id_personnel</td>
+							<td><input type="text" th:field="*{id_personnel}" /></td>
+						</tr>
+						
+		      <tr>
+							<td>nom</td>
+							<td><input type="text" th:field="*{nom}" /></td>
+						</tr>
+		      <tr>
+							<td>prenom</td>
+							<td><input type="text" th:field="*{prenom}" /></td>
+						</tr>
+						
+		      <tr>
+							<td>adresse</td>
+							<td><input type="text" th:field="*{adresse}" /></td>
+						</tr>
+						<tr>
+							<td>poste</td>
+							<td><input type="text" th:field="*{poste}" /></td>
+						</tr>
+						
+		      <tr>
+							<td>mail</td>
+							<td><input type="text" th:field="*{mail}" /></td>
+						</tr>
+		      <tr>
+							<td>telephone</td>
+							<td><input type="text" th:field="*{telephone}" /></td>
+						<td><button class="btn btn-primary" type="submit">Save</button></td>
+					</table>
+					</form>
+					</div>
+</body>
+</html>

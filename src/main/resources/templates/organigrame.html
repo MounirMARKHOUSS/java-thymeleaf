@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head> <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+<title>organigrame</title>
+</head>
+<body>
+<div align="center">
+<h1> List  of organigrame </h1>
+
+<a href="/org">New organigrame</a>
+ </br></br>
+<table border="1" cellpadding="10">
+<thead>
+<tr>
+<th>id_Organigrame </th>
+<th>nom_organigrame </th>
+<th>adresse </th>
+<th>email</th>
+<th>tel</th>
+</tr>
+</thead>
+<tbody>
+
+<tr th:each="organigrame:${organigrames}">
+<td th:text="${organigrame.id_Organigrame}">id_Organigrame</td>
+<td th:text="${organigrame.nom_organigrame}">nom_organigrame</td>
+<td th:text="${organigrame.adresse}">adresse</td>
+<td th:text="${organigrame.email}">email</td>
+<td th:text="${organigrame.tel}">tel</td>
+<td>
+<a th:href="@{'/eddd/'+${organigrame.id_Organigrame}}" class="btn btn-primary" type="submit">edit</a>
+<a th:href="@{'/dell/'+${organigrame.id_Organigrame}}" class="btn btn-primary" type="submit">delete</a>
+
+</td>
+
+
+</tr>
+</tbody>
+</body>
+</html>

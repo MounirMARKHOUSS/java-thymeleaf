@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Etudiant</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div align="center">
+<div>
+<h1>Update Etudiant</h1>
+<form th:action="@{/aut}" methode="post" th:object="${etudiant}">
+	<table class="table" border="1" cellpadding="10">	 
+  <tr>
+
+					<td>Id</td>
+					<td><input type="text" th:field="*{id}" />
+					</td>
+				</tr>
+             
+
+
+<tr>
+
+					<td>Num_code_etudiant</td>
+					<td><input type="text" th:field="*{num_code_etudiant}" />
+					</td>
+				</tr>
+             <tr>
+
+					<td>Name</td>
+					<td><input type="text" th:field="*{nom}" />
+					</td>
+				</tr>
+				
+	   <tr>
+
+					<td>Prenom</td>
+					<td><input type="text" th:field="*{prenom}" />
+					</td>
+				</tr>			
+
+   <tr>
+
+					<td>date_naissance</td>
+					<td><input type="text" th:field="*{date_naissance}" />
+					</td>
+				</tr>
+
+   <tr>
+
+					<td>cin</td>
+					<td><input type="text" th:field="*{cin}" />
+				   </td>
+				</tr>
+ <tr>
+
+					<td>email</td>
+					<td><input type="text" th:field="*{email}" />
+				   </td>
+				</tr>				
+	 <tr>
+
+					<td>cin</td>
+					<td><input type="text" th:field="*{cin}" />
+				   </td>
+				</tr>			
+	 <tr>
+
+					<td>adresse</td>
+					<td><input type="text" th:field="*{adresse}" />
+				   </td>
+				</tr>			
+	 <tr>
+
+					<td>tel</td>
+					<td><input type="text" th:field="*{tel}" />
+				   </td>
+				</tr>	
+				 <tr>
+
+					<td>password</td>
+					<td><input type="text" th:field="*{password}" />
+				   </td>
+				</tr>		
+
+                <td><button class="btn btn-primary" type="submit">Save</button></td>
+        	</table>
+	</form>
+
+</div>
+</body>
+</html>

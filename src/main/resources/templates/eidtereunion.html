@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css"
+	href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>Update Reunion list</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div align="center">
+		<div>
+			<h1>Update Etudiant</h1>
+			<form th:action="@{/enregistre}" methode="post"
+				th:object="${reunion_travail}">
+				<table class="table" border="1" cellpadding="10">
+
+
+					<tr>
+
+						<td>Id</td>
+						<td><input type="text" th:field="*{id}" /></td>
+					</tr>
+
+					<tr>
+						<td>Date_reunion</td>
+						<td><input type="text" th:field="*{date_reunion}" /></td>
+					</tr>
+
+					<tr>
+						<td>Travail_effetuer</td>
+						<td><input type="text" th:field="*{travail_effetuer}" /></td>
+					</tr>
+
+					<tr>
+						<td>Objectif</td>
+						<td><input type="text" th:field="*{objectif}" /></td>
+					</tr>
+					<td><button class="btn btn-primary" type="submit">Save</button></td>
+				</table>
+			</form>
+		</div>
+</body>
+</html>

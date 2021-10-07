@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+<title>personnel</title>
+</head>
+<body>
+<div align="center">
+<h1>personnel Of List</h1>
+ <a href="/perso"> New Personnel </a>
+  </br></br>
+
+ <table border="1" cellpadding="10">
+<thead>
+<tr>
+<th>ID_PERSONNEL</th>
+<th>NOM</th>
+<th>PRENOM</th>
+<th>ADRESSE</th>
+<th>POST</th>
+<th>EMAIL</th>
+ <th>TEL</th>
+</tr>
+</thead>
+<tbody>
+
+<tr th:each=" personnel:${personnels}">
+ <td th:text="${personnel.id_personnel}"> Id_PERSONNEL </td>
+<td th:text="${personnel.nom}"> NOM </td>
+<td th:text="${personnel.prenom}"> PRENOM  </td>
+<td th:text="${personnel.adresse}"> ADRESSE  </td>
+<td th:text="${personnel.poste}"> POST </td>
+<td th:text="${personnel.mail}"> EMAIL </td>
+<td th:text="${personnel.telephone}"> TEL </td>
+<td th:text="${personnel.organigrame != null ? personnel.organigrame.nom_organigrame : 'NOT FOUND'}"/>Organigrame</td>
+<td>
+<a th:href="@{'/mod/'+${personnel.id_personnel}}" class="btn btn-primary" type="submit">edit</a>
+<a th:href="@{'/supr/'+${personnel.id_personnel}}"class="btn btn-primary" type="submit">delete</a>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</body>
+</html>

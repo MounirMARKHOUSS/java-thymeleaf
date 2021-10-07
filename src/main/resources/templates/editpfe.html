@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update pfe</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+</head>
+<body>
+<div align="center">
+		<div>
+	<h1>Update pfe</h1>		
+	<form th:action="@{/led}" methode="post" th:object="${pfe}">
+				<table cellpadding="10">	
+				
+				<table class="table" border="1" cellpadding="10">
+                       <tr>
+							<td>ID_pfe</td>
+							<td><input type="text" th:field="*{id_pfe}" /></td>
+						</tr>
+					
+				         <tr>
+							<td>TITRE</td>
+							<td><input type="text" th:field="*{titre}" /></td>
+						</tr>	
+		<tr>
+							<td>DESCRIPTION</td>
+							<td><input type="text" th:field="*{description}" /></td>
+						</tr>			
+					<td><button class="btn btn-primary" type="submit">Save</button></td>
+					</table>
+					</form>
+					</div>
+				
+		
+</body>
+</html>

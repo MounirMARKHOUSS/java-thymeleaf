@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1"> 
+<title>pz</title>
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+</head>
+<body>
+<div align="center">
+		<div>
+			<form th:action="@{/saveeee}" methode="post" th:object="${pfe}">
+				<table cellpadding="10">
+					<table class="table" border="1" cellpadding="10">
+					
+					 
+					
+		<tr>
+								<td>id pfe</td>
+							<td><input type="text" th:field="*{id_pfe}" /></td>
+						</tr>
+							<td>Date_soutenance</td>
+							<td><input type="text" th:field="*{date_soutenance}" /></td>
+						</tr>			
+					
+						<td>heure_soutenance</td>
+							<td><input type="text" th:field="*{heure_soutenance}" /></td>
+						</tr>
+							<td>SALLE</td>
+							<td><input type="text" th:field="*{salle}" /></td>
+						</tr>
+						</tr>
+							<td>RAPPORT</td>
+							<td><input type="text" th:field="*{rapport}" /></td>
+						</tr>
+							<td>NOTE</td>
+							<td><input type="text" th:field="*{note}" /></td>
+						</tr>
+						
+						</tr>
+							<td>MENTION</td>
+							<td><input type="text" th:field="*{mention}" /></td>
+						</tr>
+							<td>ETAT</td>
+							<td><input type="text" th:field="*{etat}" /></td>
+						</tr>
+						<td>date_depot</td>
+							<td><input type="text" th:field="*{date_depot}" /></td>
+						</tr>
+							 
+						<td><button class="btn btn-primary" type="submit">Save</button></td>					
+				</table>
+					</form>
+					</div>	
+					
+					
+					
+					
+</body>
+</html>

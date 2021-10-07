@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head> <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"
+	rel="stylesheet" />
+	 
+<title>sout</title>
+</head>
+<body>
+	<div align="center">
+		<div>
+			<form th:action="@{/sa}" methode="post"
+				th:object="${semmaine_soutenance}">
+				<table cellpadding="10">
+					<table class="table" border="1" cellpadding="10">
+						<tr>
+							<td>Date_Debut</td>
+							<td><input type="text" th:field="*{date_debut}" /></td>
+						</tr>
+						<tr>
+
+							<td>Date_Fin</td>
+							<td><input type="text" th:field="*{date_fin}" /></td>
+						</tr>
+						<tr>
+
+							<td>Date_Debut_Depot</td>
+							<td><input type="text" th:field="*{date_debut_depot}" /></td>
+						</tr>
+						<td>Date_Fin_Depot</td>
+						<td><input type="text" th:field="*{date_fin_depot}" /></td>
+						</tr>
+
+
+						<td>Section:</td>
+						<td><select th:field="*{section}">
+								<option value="-1" name="sectionId">-- Select Section
+									--</option>
+								<option th:each="section : ${sections}"
+									th:value="${section.id_section}"
+									th:utext="${section.nom_section}" />
+						</select></td>
+						</tr>
+						<td><button class="btn btn-primary" type="submit">Save</button></td>
+					</table>
+					</form>
+					</div>
+</body>
+</html>
